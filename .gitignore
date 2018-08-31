@@ -1,0 +1,5 @@
+.firebase/
+.firebaserc
+coverage/
+node_modules/
+working/
