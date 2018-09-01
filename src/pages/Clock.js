@@ -5,7 +5,7 @@ import { secondsToTimeStr } from '../util';
 export default ({ store }) => {
   const { width, remaining } = store.getState();
 
-  const container = createElement('div', {
+  const el = createElement('div', {
     className: `clock${remaining <= 0 ? ' expired' : ''}`,
     onclick: () => store.dispatch({ type: 'PAUSE' }),
     children: [
@@ -15,7 +15,10 @@ export default ({ store }) => {
     ],
   });
 
-  container.setAttribute('style', `font-size: ${Math.floor(width / 5)}px;`);
+  el.setAttribute(
+    'style',
+    `font-size: ${Math.floor(width / ((remaining >= 3600) ? 5 : 3.2))}px;`,
+  );
 
-  return container;
+  return el;
 };
