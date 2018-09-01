@@ -49,7 +49,6 @@ button {
   height: 100vh;
 }
 
-
 .duration-picker {
   margin-bottom: 20px;
   display: flex;
@@ -64,11 +63,6 @@ button {
   width: 33%;
 }
 
-.duration-picker select {
-  /* width: 33%;
-  margin-bottom: 20px; */
-}
-
 .duration-picker label {
   font-size: 0.6em;
   padding: 5px;
@@ -78,7 +72,6 @@ button {
   display: flex;
   justify-content: space-between;
 }
-
 
 .clock {
   display: flex;
