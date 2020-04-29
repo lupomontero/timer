@@ -18,6 +18,7 @@ export default (state, action) => {
         running: false,
         paused: false,
         duration: 0,
+        remaining: 0,
         lastTick: null,
       };
     case 'TICK':
