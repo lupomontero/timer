@@ -13,6 +13,7 @@ const initialState = (
       duration: 0,
       start: null,
       remaining: 0,
+      lastTick: null,
       width: window.innerWidth,
     }
 );

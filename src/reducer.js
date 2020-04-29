@@ -5,17 +5,12 @@ export default (state, action) => {
         ...state,
         running: true,
         paused: false,
-        start: Date.now(),
-        remaining: state.duration,
+        lastTick: Date.now(),
       };
     case 'PAUSE':
       return {
         ...state,
         paused: true,
-        duration: Math.max(
-          state.duration - Math.floor((Date.now() - state.start) / 1000),
-          0,
-        ),
       };
     case 'STOP':
       return {
@@ -23,20 +18,22 @@ export default (state, action) => {
         running: false,
         paused: false,
         duration: 0,
-        start: null,
+        lastTick: null,
       };
     case 'TICK':
       return {
         ...state,
         remaining: Math.max(
-          state.duration - Math.floor((Date.now() - state.start) / 1000),
+          state.remaining - (Date.now() - state.lastTick),
           0,
         ),
+        lastTick: Date.now(),
       };
     case 'SET_DURATION':
       return {
         ...state,
-        duration: Math.max(Math.floor(action.payload), 0),
+        duration: action.payload,
+        remaining: action.payload * 1000,
       };
     case 'SET_WIDTH':
       return { ...state, width: action.payload };

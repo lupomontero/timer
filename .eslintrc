@@ -5,5 +5,9 @@
   "parserOptions": {
     "ecmaVersion": 2018
   },
-  "extends": "airbnb-base"
+  "extends": "airbnb-base",
+  "rules": {
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "no-nested-ternary": "off"
+  }
 }

@@ -78,10 +78,38 @@ button {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: #00cc11;
+}
+
+.clock.half {
+  color: yellow;
+}
+
+.clock.warn {
   color: crimson;
 }
 
 .clock.expired {
   background-color: crimson;
   color: #000;
+}
+
+.clock .progress {
+  background-color: #00cc11;
+  height: 20px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.clock .progress.half {
+  background-color: yellow;
+}
+
+.clock .progress.warn {
+  background-color: crimson;
+}
+
+.clock .progress.expired {
+  display: none;
 }

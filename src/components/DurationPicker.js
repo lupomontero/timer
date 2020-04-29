@@ -42,8 +42,8 @@ const SelectGroup = ({ name, value, onChange }) => {
 };
 
 
-export default ({ duration, onChange }) => {
-  const { hours, minutes, seconds } = secondsToTimeObj(duration);
+export default ({ remaining, onChange }) => {
+  const { hours, minutes, seconds } = secondsToTimeObj(remaining / 1000);
 
   return createElement('div', {
     className: 'duration-picker',

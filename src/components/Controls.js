@@ -1,7 +1,7 @@
 import { createElement } from 'nano';
 
 
-export default ({ store, duration, paused }) => createElement('div', {
+export default ({ store, remaining, paused }) => createElement('div', {
   className: 'controls',
   children: [
     paused && createElement('button', {
@@ -12,7 +12,7 @@ export default ({ store, duration, paused }) => createElement('div', {
     createElement('button', {
       className: 'primary',
       innerHTML: paused ? 'Continue' : 'Start',
-      disabled: !duration,
+      disabled: !remaining,
       onclick: () => store.dispatch({ type: 'START' }),
     }),
   ],
