@@ -20,7 +20,7 @@ export default (store) => {
       } else {
         clearInterval(interval);
       }
-    }, 500);
+    }, 250);
     noSleep.enable();
   };
 
