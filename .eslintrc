@@ -8,6 +8,7 @@
   "extends": "airbnb-base",
   "rules": {
     "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
-    "no-nested-ternary": "off"
+    "no-nested-ternary": "off",
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 0, "maxEOF": 1 }]
   }
 }
